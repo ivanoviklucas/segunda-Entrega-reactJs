@@ -1,0 +1,28 @@
+.contenedor-productos{display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+.tarjeta-producto {
+  width: 250px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2),
+    -8px -8px 20px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+  transform: perspective(1000px) rotateY(0deg);
+  text-align: center;
+}
+
+.tarjeta-producto:hover{
+transform:scale(1.1);
+  box-shadow: 12px 12px 25px rgba(0,0,0,0.25),
+              -12px -12px 25px rgba(255,255,255,0.6);
+}
+.producto-img{
+ width: 200px;
+ height: 200px
+}
