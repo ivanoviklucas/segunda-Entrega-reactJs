@@ -1,0 +1,35 @@
+.contenedor-inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background: rgba(0, 0, 0, 0.7); /* fondo oscuro semi-transparente */
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4),
+              -8px -8px 20px rgba(255, 255, 255, 0.1);
+  margin: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contenedor-inicio:hover {
+  transform: scale(1.02);
+  box-shadow: 12px 12px 25px rgba(0,0,0,0.5),
+              -12px -12px 25px rgba(255,255,255,0.15);
+}
+
+.inicio-titulo {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #FFD700; /* dorado brillante para resaltar */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.inicio-parrafo {
+  max-width: 800px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #ffffff; /* texto blanco para contraste con fondo oscuro */
+  margin-bottom: 15px;
+}

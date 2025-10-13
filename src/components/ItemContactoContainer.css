@@ -1,0 +1,58 @@
+/* ItemContactoContainer.css */
+
+h1, h2, h3 {
+  text-align: center;
+  color: #333;
+  margin: 10px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor principal */
+.contacto-container {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 50px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contacto-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos */
+h1 {
+  font-size: 2rem;
+  color: #1e88e5; /* azul suave o el color principal de tu paleta */
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Efecto de hover para el mail */
+h3:hover {
+  color: #1e88e5;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contacto-container {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2, h3 {
+     font-size: 1rem;
+  }
+}

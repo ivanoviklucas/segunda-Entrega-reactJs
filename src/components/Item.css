@@ -1,0 +1,93 @@
+/* 🔹 Contenedor general: organiza las tarjetas en fila centradas */
+.contenedor-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* 🔹 Cada tarjeta de producto */
+.Tarjeta-producto {
+  width: 260px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4),
+              -6px -6px 20px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.Tarjeta-producto:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5),
+              -10px -10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* 🔹 Imagen del producto */
+.producto-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Título */
+.Tarjeta-producto h2 {
+  font-size: 1.4rem;
+  color: #FFD700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* 🔹 Descripción */
+.producto-descripcion {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Precio */
+.producto-price {
+  font-size: 1.2rem;
+  color: #FFD700;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Contenedor de botones (los pone en columna centrados) */
+.botones-producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🔹 Botones */
+.producto-button,
+.Tarjeta-producto a button {
+
+  background-color: #FFD700;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3),
+              -2px -2px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Hover de los botones */
+.producto-button:hover,
+.Tarjeta-producto a button:hover {
+  background-color: #ffc700;
+  transform: scale(1.08);
+}

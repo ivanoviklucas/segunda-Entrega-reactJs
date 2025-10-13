@@ -1,0 +1,53 @@
+/* Contenedor principal del contador */
+.contenedor-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.7); /* fondo oscuro semi-transparente */
+  border-radius: 15px;
+  box-shadow: 6px 6px 18px rgba(0,0,0,0.4),
+              -6px -6px 18px rgba(255,255,255,0.1);
+  margin: 15px auto;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+
+.contenedor-count:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 25px rgba(0,0,0,0.5),
+              -10px -10px 25px rgba(255,255,255,0.1);
+}
+
+/* Botones + y - */
+.contenedor-count button {
+  background-color: #FFD700; /* dorado llamativo */
+  border: none;
+  border-radius: 10px;
+  color: #000; /* texto negro dentro del botón */
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3),
+              -2px -2px 6px rgba(255,255,255,0.1);
+}
+
+.contenedor-count button:hover {
+  background-color: #ffc700;
+  transform: scale(1.1);
+}
+
+/* Número del contador */
+.contenedor-count p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff !important; /* blanco forzado para que se vea sobre fondo oscuro */
+  margin: 0;
+  padding: 0 10px;
+  min-width: 30px;
+  text-align: center;
+  display: inline-block;
+}

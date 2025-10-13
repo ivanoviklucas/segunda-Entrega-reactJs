@@ -1,28 +1,85 @@
-.contenedor-productos{display: flex;
-flex-direction: row;
-justify-content: center;
-}
-
-.tarjeta-producto {
-  width: 250px;
+/* 🔹 Contenedor que organiza las tarjetas en fila centradas */
+.contenedor-lista {
+  display: flex;
+  flex-wrap: wrap;          /* Si no caben todas, pasan a otra fila */
+  justify-content: center;  /* Centra las tarjetas horizontalmente */
+  gap: 20px;                /* Espacio entre tarjetas */
   padding: 20px;
-  margin: 20px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2),
-    -8px -8px 20px rgba(255, 255, 255, 0.5);
-  transition: all 0.3s ease-in-out;
-  transform: perspective(1000px) rotateY(0deg);
-  text-align: center;
+  margin: 0 auto;
+  max-width: 1400px;        /* Para que quepan varias en fila */
 }
 
-.tarjeta-producto:hover{
-transform:scale(1.1);
-  box-shadow: 12px 12px 25px rgba(0,0,0,0.25),
-              -12px -12px 25px rgba(255,255,255,0.6);
+/* 🔹 Tarjeta individual */
+.Tarjeta-producto {
+  width: 200px;              /* Más pequeña para que entren más en fila */
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.4), -4px -4px 15px rgba(255,255,255,0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
 }
-.producto-img{
- width: 200px;
- height: 200px
+
+.Tarjeta-producto:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 20px rgba(0,0,0,0.5), -8px -8px 20px rgba(255,255,255,0.1);
 }
+
+/* 🔹 Imagen del producto */
+.producto-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Título */
+.Tarjeta-producto h2 {
+  font-size: 1.2rem;
+  color: #FFD700;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+/* 🔹 Descripción */
+.producto-descripcion {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+/* 🔹 Precio */
+.producto-price {
+  font-size: 1rem;
+  color: #FFD700;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Botones en columna */
+.Tarjeta-producto > button,
+.Tarjeta-producto > a > button {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 12px;       /* Separación entre botones */
+  border-radius: 8px;
+  border: none;
+  background-color: #FFD700;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.Tarjeta-producto > button:hover,
+.Tarjeta-producto > a > button:hover {
+  background-color: #ffc700;
+  transform: scale(1.08);
+}
+
