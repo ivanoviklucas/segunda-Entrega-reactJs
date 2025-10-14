@@ -31,7 +31,8 @@ function App() {
         />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/Inicio" element={<ItemInicioContainer greeting="bienvenido"/>} />
-        <Route path="/Detail/:idparam" element={<ItemDetailContainer />} />
+        <Route path="/productos/:categoria/:idparam" element={<ItemDetailContainer />} />
+         <Route path="/productos/:categoria" element={<ItemListContainer greeting="Productos filtrados" />} />
       </Routes>
     </BrowserRouter>
   );
