@@ -3,25 +3,31 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCounter";
 import { useEffect, useState } from "react";
 import getproductbyId from "../assets/data/modapiservice";
+import "./ItemDetailContainer.css"
 function ItemDetailContainer(props) {
-    const [itemData, setitemData]=useState({});
-    const {idparam} = useParams();
-    useEffect(() => {
- getproductbyId(idparam).then(res => setitemData(res))
-}, []);
+  const [itemData, setitemData] = useState({});
+  const { idparam } = useParams();
+  useEffect(() => {
+    getproductbyId(idparam).then((res) => setitemData(res));
+  }, []);
 
-    console.log("props",props)
-    console.log (idparam)
+  console.log("props", props);
+  console.log(idparam);
   return (
-    <>
+    <div className="detalle-contenedor">
       <div className="Tarjeta-producto">
-        <img src={itemData.imagen} className="producto-img" alt={itemData.descripcion} />
+        <img
+          src={itemData.imagen}
+          className="producto-img"
+          alt={itemData.descripcion}
+        />
         <h2>{itemData.descripcion}</h2>
         <p className="producto-price">${itemData.precio}</p>
-        <ItemCount/>
+        <ItemCount />
         <button className="producto-button">Agregar al carrito</button>
       </div>
-    </>
-  );}
+    </div>
+  );
+}
 
-  export default ItemDetailContainer;
+export default ItemDetailContainer;

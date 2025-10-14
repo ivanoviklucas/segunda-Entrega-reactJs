@@ -1,3 +1,4 @@
+
 import "./App.css";
 import Item from "./components/Item";
 import ItemListContainer from "./components/ItemListContainer";
@@ -9,9 +10,10 @@ import { Navigate } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemInicioContainer from "./components/ItemInicioContainer";
 
+
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <h1>Bienvenido a fulbi clothes</h1>
       <NavBar />
       <Routes>
@@ -31,7 +33,7 @@ function App() {
         <Route path="/Inicio" element={<ItemInicioContainer greeting="bienvenido"/>} />
         <Route path="/Detail/:idparam" element={<ItemDetailContainer />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,6 @@
+.detalle-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; /* para centrar verticalmente también si querés */
+}

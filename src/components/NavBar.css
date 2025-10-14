@@ -1,11 +1,30 @@
-.NavBar{
- display: flex;
- justify-content: right;
- gap: 15px;
- align-items: center;
-padding: 15px 30px;
-background-color:#2c3e50;
- box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  margin: 20px;
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f2f2f2;
 }
