@@ -9,10 +9,10 @@ const {categoria} = useParams()
   const RopaFiltrada = categoria
   ? ropaProductos.filter(r => r.categoria.toLowerCase() === categoria.toLowerCase())
   : ropaProductos;
-
+const greetingDinamico = categoria ? `${categoria}`: "Todos los productos"
 return (
     <>
-      <h2>{greeting}</h2>
+      <h2>{greetingDinamico}</h2>
       <div className="contenedor-lista">
         {RopaFiltrada.map(item => <Item key={item.id} {...item} />)}
       </div>
