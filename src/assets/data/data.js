@@ -6,7 +6,7 @@ const ropaProductos = [
     descripcion: "Camiseta deportiva con logo",     
     imagen: "https://placehold.co/150x150?text=Adidas+Camiseta",     
     precio: 3500,
-    categoria: "Ropa deportiva"
+    categoria: "remeras" // categoría más general
   },   
   {     
     id: 2,     
@@ -15,7 +15,7 @@ const ropaProductos = [
     descripcion: "Pantalón de entrenamiento",     
     imagen: "https://placehold.co/150x150?text=Nike+Pantalon",     
     precio: 4800,
-    categoria: "Ropa deportiva"
+    categoria: "pantalones"
   },   
   {     
     id: 3,     
@@ -24,7 +24,7 @@ const ropaProductos = [
     descripcion: "Buzo con capucha",     
     imagen: "https://placehold.co/150x150?text=Puma+Buzo",     
     precio: 6000,
-    categoria: "Ropa deportiva"
+    categoria: "buzos"
   },   
   {     
     id: 4,     
@@ -33,7 +33,7 @@ const ropaProductos = [
     descripcion: "Short de running",     
     imagen: "https://placehold.co/150x150?text=Reebok+Short",     
     precio: 3200,
-    categoria: "Ropa deportiva"
+    categoria: "shorts"
   },   
   {     
     id: 5,     
@@ -42,7 +42,7 @@ const ropaProductos = [
     descripcion: "Remera de compresión",     
     imagen: "https://placehold.co/150x150?text=UA+Remera",     
     precio: 4000,
-    categoria: "Ropa deportiva"
+    categoria: "remeras"
   } 
 ];  
 

@@ -2,13 +2,19 @@ import "./ItemListContainer.css";
 import Item from "./Item";
 import ItemCount from './ItemCounter'
 import Ropa from "../assets/data/data"
-
+import ropaProductos from "../assets/data/data";
+import { useParams } from "react-router-dom";
 function ItemListContainer({greeting}) {
-  return (
+const {categoria} = useParams() 
+  const RopaFiltrada = categoria
+  ? ropaProductos.filter(r => r.categoria.toLowerCase() === categoria.toLowerCase())
+  : ropaProductos;
+
+return (
     <>
       <h2>{greeting}</h2>
       <div className="contenedor-lista">
-        {Ropa.map(item => <Item key={item.id} {...item} />)}
+        {RopaFiltrada.map(item => <Item key={item.id} {...item} />)}
       </div>
       <ItemCount/>
     </>
