@@ -1,18 +1,31 @@
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import ItemCount from "./ItemCounter";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import ItemCounter from "./ItemCounter.jsx";
 import getproductbyId from "../assets/data/modapiservice";
-import "./ItemDetailContainer.css"
-function ItemDetailContainer(props) {
-  const [itemData, setitemData] = useState({});
-  const { idparam } = useParams();
-  useEffect(() => {
-    getproductbyId(idparam).then((res) => setitemData(res));
-  }, []);
+import { themeContext } from "./ccontext.jsx";
+import "./ItemDetailContainer.css";
 
-  console.log("props", props);
-  console.log(idparam);
+function ItemDetailContainer() {
+  const [itemData, setItemData] = useState(null);
+  const [cantidadSeleccionada, setCantidadSeleccionada] = useState(1);
+  const { idparam } = useParams();
+  const { agregarProductos,  } = useContext(themeContext);
+
+  useEffect(() => {
+    getproductbyId(idparam).then(res => {
+      setItemData(res);
+      setCantidadSeleccionada(1); // 🔹 reinicio cada vez que cambia el producto
+    });
+  }, [idparam]);
+
+  if (!itemData) return <p>Cargando producto...</p>;
+
+  const handleAgregar = () => {
+    agregarProductos(itemData, Number(cantidadSeleccionada));
+    setCantidadSeleccionada(1); // 🔹 reiniciamos el contador después de agregar
+  };
+  
+
   return (
     <div className="detalle-contenedor">
       <div className="Tarjeta-producto">
@@ -23,8 +36,15 @@ function ItemDetailContainer(props) {
         />
         <h2>{itemData.descripcion}</h2>
         <p className="producto-price">${itemData.precio}</p>
-        <ItemCount />
-        <button className="producto-button">Agregar al carrito</button>
+
+        <ItemCounter
+          cantidad={cantidadSeleccionada}
+          setCantidad={setCantidadSeleccionada}
+        />
+
+        <button className="producto-button" onClick={handleAgregar}>
+          Agregar al carrito
+        </button>
       </div>
     </div>
   );

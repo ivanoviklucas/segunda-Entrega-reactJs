@@ -1,19 +1,16 @@
-import { useState } from "react";
-import "./ItemCounter.css";
-
-function ItemCount() {
-  const [Contador, setContador] = useState(1);
-
-  const restar = () => { if (Contador > 0) setContador(Contador - 1); };
-  const sumar  = () => { if (Contador < 10) setContador(Contador + 1); };
+import "./ItemCounter.css"
+function ItemCounter({ cantidad, setCantidad }) {
+  const aumentar = () => setCantidad(prev => prev + 1);
+  const disminuir = () => setCantidad(prev => Math.max(1, prev - 1));
 
   return (
-    <div className="contenedor-count"> {/* clase añadida */}
-      <button onClick={restar}>-</button>
-      <p>{Contador}</p>
-      <button onClick={sumar}>+</button>
+    <div className="contenedor-count">
+      <button onClick={disminuir}>-</button>
+      <p>{cantidad}</p>
+      <button onClick={aumentar}>+</button>
     </div>
   );
 }
 
-export default ItemCount;
+export default ItemCounter;
+

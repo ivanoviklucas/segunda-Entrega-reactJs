@@ -2,6 +2,8 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Cardwiget from "./cardwidget";
+
 function NavBar() {
   return (
     <>
@@ -29,6 +31,7 @@ function NavBar() {
         <Link to="/contacto">
           <button className="NavBar-button">Contacto</button>
         </Link>
+        <Cardwiget/>
       </nav>
     </>
   );

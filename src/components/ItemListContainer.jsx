@@ -16,7 +16,6 @@ return (
       <div className="contenedor-lista">
         {RopaFiltrada.map(item => <Item key={item.id} {...item} />)}
       </div>
-      <ItemCount/>
     </>
   );
 }
