@@ -42,6 +42,7 @@ function App() {
 
           {/* 404 */}
           <Route path="*" element={<h2>404 - Página no encontrada</h2>} />
+        <Route path="/inicio" element={<ItemInicioContainer/>} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
