@@ -1,6 +1,71 @@
+<<<<<<< HEAD
 .detalle-contenedor {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 70vh; /* para centrar verticalmente también si querés */
+=======
+.detalle-producto {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4),
+              -6px -6px 20px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.detalle-producto:hover {
+  transform: scale(1.02);
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5),
+              -10px -10px 25px rgba(255, 255, 255, 0.15);
+}
+
+.detalle-producto img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.detalle-producto h2 {
+  font-size: 1.6rem;
+  color: #FFD700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.detalle-producto p {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.btn-agregar-carrito {
+  background-color: #FFD700;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3),
+              -2px -2px 6px rgba(255,255,255,0.1);
+  margin-top: 15px;
+}
+
+.btn-agregar-carrito:hover {
+  background-color: #ffc700;
+  transform: scale(1.05);
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
 }

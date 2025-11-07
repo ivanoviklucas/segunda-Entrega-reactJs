@@ -13,7 +13,11 @@ export default function ItemListContainer({ greeting }) {
       setLoading(true);
       try {
         const cat = categoria ? categoria.toLowerCase() : null;
+<<<<<<< HEAD
         const data = await getItems(cat);
+=======
+        const data = await getItems(cat); // Traemos productos desde Firestore
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
         setProductos(data);
       } catch (err) {
         console.error("Error cargando productos:", err);
@@ -60,6 +64,10 @@ export default function ItemListContainer({ greeting }) {
               <h2>{p.titulo}</h2>
               <p className="producto-descripcion">{p.descripcion}</p>
               <p className="producto-price">${p.precio}</p>
+<<<<<<< HEAD
+=======
+              {/* Link al detalle usando el ID real de Firestore */}
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
               <Link to={`/productos/${categoriaUrl}/${p.id}`}>
                 <button>Ver más</button>
               </Link>
@@ -70,3 +78,7 @@ export default function ItemListContainer({ greeting }) {
     </div>
   );
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)

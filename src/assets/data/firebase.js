@@ -8,8 +8,14 @@ import {
   where,
   doc,
   getDoc,
+<<<<<<< HEAD
 } from "firebase/firestore";
 import ropaProductos from "./data.js"; // tu archivo con productos
+=======
+  updateDoc,
+} from "firebase/firestore";
+import ropaProductos from "./data.js";
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
 
 // 🔹 Configuración Firebase
 const firebaseConfig = {
@@ -30,15 +36,26 @@ export async function exportarProductosAFirebase() {
     const ref = collection(db, "productos");
     const snapshot = await getDocs(ref);
 
+<<<<<<< HEAD
     // Evitar duplicados
+=======
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
     if (!snapshot.empty) {
       console.log("⚠️ Ya existen productos en la base de datos.");
       return;
     }
 
+<<<<<<< HEAD
     // Subir productos desde data.js
     for (const producto of ropaProductos) {
       await addDoc(ref, producto);
+=======
+    for (const producto of ropaProductos) {
+      // 1️⃣ Crear documento
+      const docRef = await addDoc(ref, producto);
+      // 2️⃣ Guardar el ID generado dentro del documento
+      await updateDoc(doc(db, "productos", docRef.id), { id: docRef.id });
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
     }
 
     console.log("✅ Productos subidos correctamente.");

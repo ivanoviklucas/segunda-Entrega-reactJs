@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 🔹 Contenedor general: organiza las tarjetas en fila centradas */
 .contenedor-lista {
   display: flex;
@@ -14,6 +15,12 @@
   width: 260px;
   border-radius: 20px;
   background: rgba(179, 8, 8, 0.7);
+=======
+.Tarjeta-producto {
+  width: 260px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05); /* mismo estilo transparente/blur que el resto */
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
   backdrop-filter: blur(10px);
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4),
               -6px -6px 20px rgba(255, 255, 255, 0.1);
@@ -28,7 +35,10 @@
               -10px -10px 25px rgba(255, 255, 255, 0.15);
 }
 
+<<<<<<< HEAD
 /* 🔹 Imagen del producto */
+=======
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
 .producto-img {
   width: 200px;
   height: 200px;
@@ -37,22 +47,34 @@
   margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
 /* 🔹 Título */
 .Tarjeta-producto h2 {
   font-size: 1.4rem;
   color: #ff1e00;
+=======
+.Tarjeta-producto h2 {
+  font-size: 1.4rem;
+  color: #FFD700; /* dorado como en el resto de títulos */
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
   margin-bottom: 10px;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
+<<<<<<< HEAD
 /* 🔹 Descripción */
+=======
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
 .producto-descripcion {
   font-size: 1rem;
   color: #fff;
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 /* 🔹 Precio */
+=======
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
 .producto-price {
   font-size: 1.2rem;
   color: #FFD700;
@@ -60,6 +82,7 @@
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 /* 🔹 Contenedor de botones (los pone en columna centrados) */
 .botones-producto {
   display: flex;
@@ -72,6 +95,9 @@
 .producto-button,
 .Tarjeta-producto a button {
 
+=======
+.Tarjeta-producto a button {
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
   background-color: #FFD700;
   border: none;
   border-radius: 10px;
@@ -85,8 +111,11 @@
               -2px -2px 6px rgba(255, 255, 255, 0.1);
 }
 
+<<<<<<< HEAD
 /* 🔹 Hover de los botones */
 .producto-button:hover,
+=======
+>>>>>>> 93ff53d (iD de itemDetailsolucionado)
 .Tarjeta-producto a button:hover {
   background-color: #ffc700;
   transform: scale(1.08);
