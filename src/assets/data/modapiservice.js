@@ -1,4 +1,3 @@
-import Item from "../../components/Item";
 import ropaProductos from "./data";
 
 function getproductbyId(idparams) {
@@ -11,4 +10,14 @@ function getproductbyId(idparams) {
     });
   });
 }
-export default getproductbyId;
+
+function getItems() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(ropaProductos);
+    }, 500);
+  });
+}
+
+export { getproductbyId, getItems };
+

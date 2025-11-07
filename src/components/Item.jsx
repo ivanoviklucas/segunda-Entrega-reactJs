@@ -1,21 +1,15 @@
 import { Link } from "react-router-dom";
-import ItemListContainer from "./ItemListContainer";
-import "./Item.css"
 
-export default function Item(props) {
-  
-  console.log(props)
+export default function Item({ id, titulo, descripcion, price, categoria, imagen }) {
   return (
-    <>
-      <div className="Tarjeta-producto">
-        <img src={props.imagen} className="producto-img" alt={props.title} />
-        <h2>{props.titulo}</h2>
-         <p className="producto-descripcion">{props.descripcion}</p>
-        <p className="producto-price">${props.price}</p>
-        <Link to={`/productos/${props.categoria}/${props.id}`}>
-        <button>ver mas</button>
-        </Link>
-      </div>
-    </>
+    <div className="item-card">
+      <img src={imagen} alt={descripcion} className="item-img" />
+      <h3>{titulo}</h3>
+      <p>{descripcion}</p>
+      <p>${price}</p>
+      {/* Link al detalle usando ID real de Firestore */}
+      <Link to={`/productos/${categoria}/${id}`}>Ver más</Link>
+    </div>
   );
 }
+

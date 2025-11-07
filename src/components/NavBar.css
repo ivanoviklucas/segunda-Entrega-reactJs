@@ -1,7 +1,42 @@
-.NavBar-button{
-  font-size: 18px;
-  
+/* --- Navbar general --- */
+.NavBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 15px 30px 15px 30px; /* top right bottom left */
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 15px 15px;
+  width: 100%;
+  text-align: left;
 }
+
+
+/* --- Botones del navbar --- */
+.NavBar-button {
+  background-color: #FFD700; /* dorado igual que tarjetas */
+  border: none;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.NavBar-button:hover {
+  background-color: #ffc700; /* dorado más brillante */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
+}
+
+/* --- Dropdown --- */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -12,10 +47,12 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
+  background: rgba(0, 0, 0, 0.85); /* negro semi-transparente como navbar */
+  border-radius: 10px;
   min-width: 150px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  padding: 10px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  z-index: 1100;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -24,11 +61,14 @@
 
 .dropdown-item {
   display: block;
-  padding: 10px;
-  color: black;
+  padding: 10px 20px;
+  color: #FFD700; /* dorado para coordinar con las tarjetas */
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .dropdown-item:hover {
-  background-color: #f2f2f2;
+  background-color: rgba(255, 215, 0, 0.2);
+  color: #fff;
+  transform: scale(1.02);
 }

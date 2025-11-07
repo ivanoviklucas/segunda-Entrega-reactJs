@@ -1,53 +1,46 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
-import ItemCounter from "./ItemCounter.jsx";
-import getproductbyId from "../assets/data/modapiservice";
-import { themeContext } from "./ccontext.jsx";
-import "./ItemDetailContainer.css";
+import { getProductById } from "../assets/data/firebase.js";
 
-function ItemDetailContainer() {
-  const [itemData, setItemData] = useState(null);
-  const [cantidadSeleccionada, setCantidadSeleccionada] = useState(1);
-  const { idparam } = useParams();
-  const { agregarProductos,  } = useContext(themeContext);
+export default function ItemDetailContainer() {
+  const { id } = useParams();
+  const [producto, setProducto] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getproductbyId(idparam).then(res => {
-      setItemData(res);
-      setCantidadSeleccionada(1); // 🔹 reinicio cada vez que cambia el producto
-    });
-  }, [idparam]);
+    if (!id) return;
 
-  if (!itemData) return <p>Cargando producto...</p>;
+    const cargarProducto = async () => {
+      try {
+        setLoading(true);
+        const data = await getProductById(id);
+        setProducto(data);
+      } catch (error) {
+        console.error(error);
+        setProducto(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const handleAgregar = () => {
-    agregarProductos(itemData, Number(cantidadSeleccionada));
-    setCantidadSeleccionada(1); // 🔹 reiniciamos el contador después de agregar
-  };
-  
+    cargarProducto();
+  }, [id]);
+
+  if (loading) return <p>Cargando producto...</p>;
+  if (!producto) return <p>No se encontró el producto.</p>;
 
   return (
-    <div className="detalle-contenedor">
-      <div className="Tarjeta-producto">
-        <img
-          src={itemData.imagen}
-          className="producto-img"
-          alt={itemData.descripcion}
-        />
-        <h2>{itemData.descripcion}</h2>
-        <p className="producto-price">${itemData.precio}</p>
-
-        <ItemCounter
-          cantidad={cantidadSeleccionada}
-          setCantidad={setCantidadSeleccionada}
-        />
-
-        <button className="producto-button" onClick={handleAgregar}>
-          Agregar al carrito
-        </button>
-      </div>
+    <div className="detalle-producto">
+      <h2>{producto.titulo}</h2>
+      <img
+        src={producto.imagen}
+        alt={producto.titulo}
+        style={{ width: "300px", borderRadius: "8px" }}
+      />
+      <p>Precio: ${producto.precio}</p>
+      <p>Categoría: {producto.categoria}</p>
+      <p>Descripción: {producto.descripcion || "Sin descripción"}</p>
     </div>
   );
 }
 
-export default ItemDetailContainer;
