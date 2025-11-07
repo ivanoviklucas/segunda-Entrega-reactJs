@@ -1,10 +1,10 @@
-<<<<<<< HEAD
 .detalle-contenedor {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 70vh; /* para centrar verticalmente también si querés */
-=======
+}
+
 .detalle-producto {
   max-width: 400px;
   margin: 40px auto;
@@ -67,5 +67,4 @@
 .btn-agregar-carrito:hover {
   background-color: #ffc700;
   transform: scale(1.05);
->>>>>>> 93ff53d (iD de itemDetailsolucionado)
 }

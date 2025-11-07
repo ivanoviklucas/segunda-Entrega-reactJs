@@ -8,16 +8,11 @@ import {
   where,
   doc,
   getDoc,
-<<<<<<< HEAD
-} from "firebase/firestore";
-import ropaProductos from "./data.js"; // tu archivo con productos
-=======
   updateDoc,
 } from "firebase/firestore";
 import ropaProductos from "./data.js";
->>>>>>> 93ff53d (iD de itemDetailsolucionado)
 
-// 🔹 Configuración Firebase
+// Configuración Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyCmWi0KQsZXvnPTKQY_iDBFXa9LQksuQYA",
   authDomain: "tienda-ropa-reactjs.firebaseapp.com",
@@ -30,32 +25,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// ✅ SUBIR PRODUCTOS (solo si no existen)
+// ✅ Subir productos a Firestore
 export async function exportarProductosAFirebase() {
   try {
     const ref = collection(db, "productos");
     const snapshot = await getDocs(ref);
 
-<<<<<<< HEAD
-    // Evitar duplicados
-=======
->>>>>>> 93ff53d (iD de itemDetailsolucionado)
     if (!snapshot.empty) {
       console.log("⚠️ Ya existen productos en la base de datos.");
       return;
     }
 
-<<<<<<< HEAD
-    // Subir productos desde data.js
     for (const producto of ropaProductos) {
-      await addDoc(ref, producto);
-=======
-    for (const producto of ropaProductos) {
-      // 1️⃣ Crear documento
       const docRef = await addDoc(ref, producto);
-      // 2️⃣ Guardar el ID generado dentro del documento
+      // Guardamos el ID generado por Firestore dentro del documento
       await updateDoc(doc(db, "productos", docRef.id), { id: docRef.id });
->>>>>>> 93ff53d (iD de itemDetailsolucionado)
     }
 
     console.log("✅ Productos subidos correctamente.");
@@ -64,7 +48,7 @@ export async function exportarProductosAFirebase() {
   }
 }
 
-// ✅ OBTENER TODOS LOS PRODUCTOS (o por categoría)
+// ✅ Obtener todos los productos o por categoría
 export async function getItems(categoria = null) {
   try {
     const productosRef = collection(db, "productos");
@@ -89,7 +73,7 @@ export async function getItems(categoria = null) {
   }
 }
 
-// ✅ OBTENER UN PRODUCTO POR ID
+// ✅ Obtener un producto por ID
 export async function getProductById(id) {
   try {
     const refProducto = doc(db, "productos", id);
