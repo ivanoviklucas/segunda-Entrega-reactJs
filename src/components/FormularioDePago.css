@@ -1,0 +1,70 @@
+form {
+  background-color: #1e1e1e; /* gris oscuro similar al menú del carrito */
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form h3 {
+  text-align: center;
+  color: #ffd700; /* dorado igual al ícono Trash2 */
+  margin-bottom: 15px;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #ddd;
+  gap: 5px;
+}
+
+form input {
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 4px #ffd700;
+}
+
+form button {
+  background-color: #ffd700;
+  color: #1e1e1e;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: #e6c200;
+}
+
+/* Extra: ajuste para pantallas pequeñas */
+@media (max-width: 480px) {
+  form {
+    padding: 15px;
+  }
+
+  form input {
+    font-size: 0.85rem;
+  }
+}

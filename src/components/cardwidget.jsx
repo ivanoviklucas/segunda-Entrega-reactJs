@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import carritoCompra from "../assets/imagenes/carro-de-la-compra.png";
 import { themeContext } from "./ccontext.jsx";
 import { Trash2 } from "lucide-react";
-
+import FormularioDePago from "./FormularioDePago.jsx";
 function Cardwiget() {
   const [menu, setMenuCerrado] = useState(false);
   const {
@@ -13,7 +13,6 @@ function Cardwiget() {
     eliminarProducto,
     totalCarrito,
     vaciarCarrito,
-    confirmarCompra,
   } = useContext(themeContext);
 
   return (
@@ -60,9 +59,7 @@ function Cardwiget() {
               <button className="vaciar-carrito" onClick={() => vaciarCarrito()}>
                 Vaciar carrito
               </button>
-              <button className="btn-comprar-carrito" onClick={() => confirmarCompra()}>
-                Comprar
-              </button>
+             <FormularioDePago/>
             </>
           )}
         </div>
